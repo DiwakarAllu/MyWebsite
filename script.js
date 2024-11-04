@@ -70,6 +70,15 @@ const projects = [
     image:
       "https://e7.pngegg.com/pngimages/465/578/png-clipart-green-plant-on-soil-tree-planting-paper-organization-growth-park-company-leaf.png", // Path to your image
   },
+   {
+    title: "MyMemoir - Personal Journal App",
+    description:
+      "MyMemoir is a personal journal app that allows users to write and organize their thoughts, memories, and experiences in a private and secure digital diary.",
+    techStack: "Android Studio, Java, SQLite",
+    liveLink: "https://github.com/DiwakarAllu/MyMemoir",
+    image:
+      "https://e7.pngegg.com/pngimages/76/181/png-clipart-fountain-pen-inkwell-quill-pen-feather-book-ink-furniture.png", // Path to your image
+  },
   {
     title: "Customer Churn Prediction Model",
     description:
@@ -127,15 +136,7 @@ const projects = [
     image:
       "https://e7.pngegg.com/pngimages/267/360/png-clipart-musical-instrument-illustration-this-business-of-music-music-education-music-industry-free-music-watercolor-music-element-watercolor-painting-watercolor-leaves.png", // Path to your image
   },
-  {
-    title: "MyMemoir - Personal Journal App",
-    description:
-      "MyMemoir is a personal journal app that allows users to write and organize their thoughts, memories, and experiences in a private and secure digital diary.",
-    techStack: "Android Studio, Java, SQLite",
-    liveLink: "https://github.com/DiwakarAllu/MyMemoir",
-    image:
-      "https://e7.pngegg.com/pngimages/76/181/png-clipart-fountain-pen-inkwell-quill-pen-feather-book-ink-furniture.png", // Path to your image
-  },
+ 
 ];
 
 function displayProjects() {

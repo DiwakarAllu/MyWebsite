@@ -59,7 +59,7 @@ const projects = [
     techStack:
       "Android Studio, Java, XML, ChatGPT API, Firebase, Google Speech-To-Text API",
     liveLink: "https://github.com/DiwakarAllu/scribe-support",
-    image: "/Devtown_portfolio/images/circular_img.png",
+    image: "/images/circular_img.png",
   },
   {
     title: "Plant-Vitality App",

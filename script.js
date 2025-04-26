@@ -31,126 +31,147 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-/*
-window.addEventListener("scroll", reveal);
 
-function reveal() {
-  var reveals = document.querySelectorAll(".reveal");
+let projects = [];
+async function fetchProjects() {
+  const container = document.getElementById("projectContainer");
 
-  for (var i = 0; i < reveals.length; i++) {
-    var windowHeight = window.innerHeight;
-    var elementTop = reveals[i].getBoundingClientRect().top;
-    var elementVisible = 150;
+  try {
+    const response = await fetch("https://api.npoint.io/a3e44c313c31388216dd/");
+    if (!response.ok) throw new Error("Network response was not OK");
 
-    if (elementTop < windowHeight - elementVisible) {
-      reveals[i].classList.add("active");
-    } else {
-      reveals[i].classList.remove("active");
+    const data = await response.json();
+    if (data.length === 0) {
+      container.innerHTML =
+        "<p style='text-align:center; color: grey;'>No projects found.</p>";
+      return;
     }
+    console.log(data);
+    projects = data;
+    displayProjects();
+  } catch (error) {
+    console.error("Fetch error:", error);
+    container.innerHTML = `
+      <p style="color: red; text-align:center;">
+        🚨 Failed to load projects. Please check your connection or try again later.
+      </p>
+    `;
   }
 }
-  */
+window.onload = () => {
+  fetchProjects();
+};
 
-const projects = [
-  {
-    title: "Scribe-Support App",
-    description:
-      "An advanced Android application to assist visually impaired and physically challenged individuals by connecting them with volunteers for exam writing support.",
-    techStack:
-      "Android Studio, Java, XML, ChatGPT API, Firebase, Google Speech-To-Text API",
-    liveLink: "https://github.com/DiwakarAllu/scribe-support",
-    image: "https://i.ibb.co/PFWykB0/circular-img.png",
-  },
-  {
-    title: "Plant-Vitality App",
-    description:
-      "An Android application to predict plant diseases from user-submitted images and provide fertilizer recommendations.",
-    techStack: "Android Studio, Java, Python, Brain Shop API, SQL database",
-    liveLink: "https://github.com/DiwakarAllu/Plant-Vitality",
-    image:
-      "https://e7.pngegg.com/pngimages/465/578/png-clipart-green-plant-on-soil-tree-planting-paper-organization-growth-park-company-leaf.png", // Path to your image
-  },
-   {
-    title: "MyMemoir - Personal Journal App",
-    description:
-      "MyMemoir is a personal journal app that allows users to write and organize their thoughts, memories, and experiences in a private and secure digital diary.",
-    techStack: "Android Studio, Java, SQLite",
-    liveLink: "https://github.com/DiwakarAllu/MyMemoir",
-    image:
-      "https://e7.pngegg.com/pngimages/76/181/png-clipart-fountain-pen-inkwell-quill-pen-feather-book-ink-furniture.png", // Path to your image
-  },
-  {
-    title: "Customer Churn Prediction Model",
-    description:
-      "Developed a predictive model for identifying customer churn in the telecom industry, achieving 93.5% accuracy.",
-    techStack: "Python, Flask, Plotly, Machine Learnig Models",
-    liveLink: "https://github.com/DiwakarAllu/Telecom-Churn-Prediction",
-    image:
-      "https://www.providesupport.com/blog/wp-content/uploads/2018/08/Reason-to-Leave...blog_.png", // Path to your image
-  },
-  {
-    title: "Turn-Based Chess-Like Game",
-    description:
-      "A turn-based chess-like game implemented using Flask and Socket.IO for real-time communication on a 5x5 grid.",
-    techStack: "Flask, Socket.IO, JavaScript, HTML, CSS",
-    liveLink: "https://diwakarallu.github.io/mini-chess/",
-    image:
-      "https://github.com/DiwakarAllu/DiwakarAllu-21BCE9213/raw/main/static/Images/win2.png",
-  },
-  {
-    title: "Global CO2 Emissions Analysis",
-    description:
-      "Analyzed global CO2 emissions using a Kaggle dataset, focusing on emissions by country and source (coal, oil, gas, cement, flaring, other).",
-    techStack: "MySQL, Tableau, Flask, Agile methodologies,Bootstrap",
-    liveLink:
-      "https://diwakarallu.github.io/Unearthing-The-Environmental-Impact-Of-Human-Activity-A-Global-CO2-Emission-Analysis/",
-    image:
-      "https://e7.pngegg.com/pngimages/216/830/png-clipart-carbon-footprint-carbon-dioxide-carbon-capture-and-storage-enhanced-oil-recovery-pollution-miscellaneous-globe.png", // Path to your image
-  },
-  {
-    title: "Turtle Crossing Game",
-    description:
-      "Navigate your turtle through a bustling street in this exciting Python-based game. Avoid vehicles, level up, and see how far you can get!",
-    techStack: "Python, Turtle Graphics",
-    liveLink:
-      "https://github.com/DiwakarAllu/turtle-crossing?tab=readme-ov-file",
-    image:
-      "https://camo.githubusercontent.com/80dcf0fa702580aceb8db4ff9fea7395023bef3f87100b5e594917218dabda01/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f55544f4c466d765877374566707139334b412f67697068792e676966", // Path to your image
-  },
-  {
-    title: "The Eloquent Reader",
-    description:
-      "An innovative tool that converts PDF documents into spoken words, enhancing accessibility for users who prefer auditory formats.",
-    techStack: "Python,tkinter, pyttsx3",
-    liveLink:
-      "https://github.com/DiwakarAllu/The-Eloquent-Reader?tab=readme-ov-file",
-    image:
-      "https://e7.pngegg.com/pngimages/504/800/png-clipart-audiobook-far-from-the-madding-crowd-macos-audio-book-app-store-macos-thumbnail.png", // Path to your image
-  },
-  {
-    title: "BeatFlow",
-    description:
-      "A web-based musical drum application created with JavaScript, allowing users to generate drum beats and rhythms by interacting with virtual drum pads.",
-    techStack: "JavaScript, HTML, CSS",
-    liveLink: "https://diwakarallu.github.io/Beatflow/",
-    image:
-      "https://e7.pngegg.com/pngimages/267/360/png-clipart-musical-instrument-illustration-this-business-of-music-music-education-music-industry-free-music-watercolor-music-element-watercolor-painting-watercolor-leaves.png", // Path to your image
-  },
- 
-];
 
 function displayProjects() {
+  console.log("Projects data:", projects);
+
   const projectContainer = document.getElementById("projectContainer");
-  projects.forEach((project) => {
+  projectContainer.style.cssText = `
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  `;
+
+  projectContainer.innerHTML = ""; // Clear previous content
+
+  projects.forEach((project, index) => {
     const projectDiv = document.createElement("div");
-    projectDiv.classList.add("project-card");
+    projectDiv.style.cssText = `
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      border-radius: 15px;
+      box-shadow: 6px 6px 15px rgba(200, 200, 200, 0.3), -6px -6px 15px rgba(255, 255, 255, 0.2);
+      padding: 20px;
+      height: 300px; /* Fixed height */
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.4s ease, border-color 0.3s ease;
+    `;
+
+    setTimeout(() => {
+      projectDiv.style.opacity = 1;
+      projectDiv.style.transform = "translateY(0)";
+    }, index * 200);
+
+    projectDiv.addEventListener("mouseover", () => {
+      projectDiv.style.boxShadow =
+        "inset 4px 4px 10px rgba(222, 20, 253, 0.4), inset -4px -4px 10px rgba(247, 91, 247, 0.2)";
+      projectDiv.style.border = "2px solid rgba(220, 132, 237, 0.7)";
+    });
+
+    projectDiv.addEventListener("mouseout", () => {
+      projectDiv.style.boxShadow =
+        "6px 6px 15px rgba(200, 200, 200, 0.3), -6px -6px 15px rgba(255, 255, 255, 0.2)";
+      projectDiv.style.border = "1px solid rgba(255, 255, 255, 0.7)";
+    });
 
     projectDiv.innerHTML = `
-      <img src="${project.image}" alt="${project.title}" class="project-image">
-      <h3>${project.title}</h3>
-      <p>${project.description}</p>
-      <h6>${project.techStack}</h6>
-      <a href="${project.liveLink}" target="_blank" class="project-button">View Project</a>
+      <div style="flex: 1; text-align: center; background: rgba(255, 255, 255, 0.25); padding: 10px; border-radius: 15px; height: 100%; display: flex; justify-content: center; align-items: center;">
+        <img src="${project.image || "https://placehold.co/600x400"}" alt="${
+      project.title
+    }" style="
+          max-width: 100%;
+          
+           width: 100%;
+           height: 250px;
+          object-fit: cover;
+          border-radius: 1.5rem;
+          transition: transform 0.3s ease-in-out;
+          box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+      </div>
+      <div style="flex: 2; padding-left: 20px; background: rgba(255, 255, 255, 0.15); padding: 10px; border-radius: 15px; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+        <h2 style="color: #333; margin-bottom: 10px; font-weight: bold; font-size: 1.4rem; line-height: 1.2;">${
+          project.title
+        }</h2>
+        <p style="font-size: 14px; color: #555; line-height: 1.6; margin-bottom: 10px;">${
+          project.description
+        }</p>
+        <h6 style="color: #777; margin-top: 10px;">${project.techStack}</h6>
+        <div style="display: flex; justify-content: center; gap: 1.5rem; margin-top: 20px;">
+          <button style="
+            font-weight: 500;
+            transition: all 300ms ease;
+            padding: 1rem;
+            width: 8rem;
+            border-radius: 30px;
+            font-size: 1rem;
+            background: linear-gradient(145deg, #d4d4d4, #f0f0f0);
+            box-shadow: inset 2px 2px 5px rgba(255, 255, 255, 0.6), inset -2px -2px 5px rgba(200, 200, 200, 0.4);
+            border: none;
+            color: black;
+          " onmouseover="this.style.boxShadow='inset -2px -2px 5px rgba(255, 255, 255, 0.8), inset 2px 2px 5px rgba(200, 200, 200, 0.6)'" onmouseout="this.style.boxShadow='inset 2px 2px 5px rgba(255, 255, 255, 0.6), inset -2px -2px 5px rgba(200, 200, 200, 0.4)'" onclick="location.href='${
+            project.githubLink
+          }'">
+            Github
+          </button>
+          <button style="
+            font-weight: 500;
+            transition: all 300ms ease;
+            padding: 1rem;
+            width: 8rem;
+            border-radius: 30px;
+            font-size: 1rem;
+            background: linear-gradient(145deg, #f3a5f6, #ff82d2);
+            box-shadow: inset 2px 2px 5px rgba(255, 255, 255, 0.6), inset -2px -2px 5px rgba(200, 200, 200, 0.4);
+            border: none;
+            color: white;
+          " onmouseover="this.style.boxShadow='inset -2px -2px 5px rgba(255, 255, 255, 0.8), inset 2px 2px 5px rgba(200, 200, 200, 0.6)'" onmouseout="this.style.boxShadow='inset 2px 2px 5px rgba(255, 255, 255, 0.6), inset -2px -2px 5px rgba(200, 200, 200, 0.4)'" onclick="location.href='${
+            project.liveLink
+          }'">
+            Live Demo
+          </button>
+        </div>
+      </div>
     `;
 
     projectContainer.appendChild(projectDiv);

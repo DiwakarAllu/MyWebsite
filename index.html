@@ -5,11 +5,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>DiwakarAllu</title>
+    <link rel="icon" type="image/png" href="images/inquisitive_neophile.jpg" />
+   
+
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ephesis&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-</head>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  </head>
 
 <body>
     
@@ -19,7 +29,7 @@
 
     <aside class="sidebar">
         <div class="sidebar-header">
-      <img src="./images/inquisitive_neophile.jpg" alt="Logo" class="logo">
+      <img src="images/inquisitive_neophile.jpg" alt="Logo" class="logo">
       
       <h2 class="logo-text">Diwakar Allu</h2>
         </div>
@@ -35,7 +45,7 @@
     <main class='main'>
 
         <nav class='navBar'>
-            <h1>Hey! It's me...</h1>
+            <h1 class="hey-greet">Hey! It's me...👋</h1>
             <div class='navigationMenu'>
                 <a href="./">Home</a>
                 <a href="#aboutMe">About Me</a>
@@ -63,8 +73,93 @@
         <h3 class='slide-up'>Kernel of Curiosity, Infinite Loop of Learning</h3>
         <!-- <p>Innovative developer with a passion for creating engaging digital experiences. Let's build something amazing together.</p> -->
         <!-- <a href='#contact' class='cta-button'>Get in Touch</a> -->
+          <div class="button-group">
+            <button class="color-btn resume-btn neumorphic-btn" onclick="location.href='https://drive.google.com/file/d/1jE8Nh-OhH36yedD9qGeNXmKgF7c3gF7x/view?usp=sharing'">
+              Resume
+            </button>
+            <button class="color-btn contact-btn" onclick="location.href='#contact'">
+              Contact Me
+            </button>
+          </div>
+
     </div>
-    
+    <style>
+      .button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 20px;
+}
+
+.neumorphic-btn {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  
+  width: 9rem;
+  border-radius: 2rem;
+  border: none;
+  color: #333;
+  background: linear-gradient(145deg, #dcdcdc, #f3f3f3);
+  box-shadow: 
+    4px 4px 8px rgba(0, 0, 0, 0.1),
+    -4px -4px 8px rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.neumorphic-btn:hover {
+  box-shadow: 
+    inset 4px 4px 8px rgba(0, 0, 0, 0.1),
+    inset -4px -4px 8px rgba(255, 255, 255, 0.7);
+  background: linear-gradient(145deg, #eaeaea, #ffffff);
+  transform: scale(1.03);
+}
+
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 20px;
+}
+
+.color-btn {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+ 
+  width: 9rem;
+  border-radius: 2rem;
+  border: 2px solid;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.resume-btn {
+  background-color: #ff914d;
+  color: #000000;
+  border-color: #fff;
+}
+
+.resume-btn:hover {
+  background-color: #fff;
+  color: #ff914d;
+  border-color: #ff914d;
+}
+
+.contact-btn {
+  background-color: #f186a6;
+  color: #121212;
+  border-color: #121212;
+}
+
+.contact-btn:hover {
+  background-color: #121212;
+  color: #F56692;
+  border-color: #F56692;
+}
+
+    </style>
 </section>
 
 
@@ -79,10 +174,22 @@
         <div class="about-me-image">
           <img src="./images/helloMe.png" alt="Diwakar">
         </div>
+        
+        <p class="reveal">Hi! I'm <span>Diwakar</span>, — not the biggest tech nerd out there, but when I touch something, I learn it, build it, and make it work. I don’t come from perfection, but I bring persistence. Got an idea? I’ll grind ‘til it turns into code. App development’s my zone— ‘cause there’s nothing like turning thoughts into something you can actually use.</p>
+
+<p class="highlight">I’m curious by nature and love exploring all the “what ifs” in my downtime. Never bored, always building.</p>
+
+<p class="reveal">I mix hard work with heart. Discipline, honesty, respect, and a hunger to grow—that’s the combo I bring to every project. And if it takes 1am workouts or all-night coding sprints, I’m in.</p>
+
+<p class="reveal">I’m not just a dev—I’m a builder, a thinker, a doer. Always moving, always evolving. </p>
+
+        
+        <!-- 
         <p class="reveal">Hello! I'm <span>Diwakar</span>, a tech enthusiast currently pursuing Computer Science Engineering at VIT-AP University. Eager to expand my horizons and take on new challenges, I'm a firm believer in the power of lifelong learning.</p>
         <p class="reveal">Beyond my academic journey, I've delved into the world of web development, crafting solutions with Python, Java, C++, R, SQL, and diving into the realm of Android development. Data analysis is my playground, and I've flexed my analytical muscles through multiple projects.</p>
         <p class="reveal">My journey has been a collaborative adventure, thriving in dynamic team environments where I've harnessed the collective genius to tackle intricate problems. I'm reliable and a valuable addition to any team.</p>
         <p class="reveal">When I'm not in the digital realm, you'll find me exploring emerging technologies and experimenting with the latest tools and platforms. I'm on the hunt for internship opportunities that will allow me to channel my enthusiasm into substantial contributions and professional growth. Ready to make a meaningful impact and embark on new tech adventures!</p>
+      -->
       </div>
     </div>
   </div>
@@ -107,7 +214,7 @@
             <h3>Bachelor of Technology in Computer Science and Engineering</h3>
             <p class="timeline-date">July 2021 – June 2025 (Expected)</p>
             <p>Vellore Institute of Technology Andhra Pradesh (VIT-AP), Amaravati, India</p>
-            <p class="timeline-details">CGPA: 8.86</p>
+            <p class="timeline-details">CGPA: 8.99</p>
           </div>
         </div>
         <div class="timeline-item reveal">
@@ -510,7 +617,7 @@
               </div>
               <div class="skill-details">
                 <h3>OpenCV</h3>
-                <p>Experience with computer vision and image processing.</p>
+                <p>Experience with computer vision and image processing.</p> 
               </div>
             </div>
           </div>
@@ -700,31 +807,84 @@
 
       <div class="contact-form">
         <h5 class="reveal">Send a Message...</h5>
-        <form action="" method="post" role="form" class="php-email-form">
+
+       <form  id="contactForm">
+          <input type="hidden" name="_captcha" value="false">
+          <!-- <input type="hidden" name="_next" value="thankyou.html"> -->
           <div class="form-group">
-            <label for="name" class="reveal">Name:</label>
-            <p><input type="text" id="name" name="name" required class="reveal"></p>
+            <label for="name">Name:</label>
+            <p><input type="text" id="name" name="name" required placeholder="Your Full Name" class="input-field"></p>
           </div>
           <div class="form-group">
-            <label for="email" class="reveal">Email:</label>
-            <p><input type="email" id="email" name="email" required class="reveal"></p>
+            <label for="email">Email:</label>
+            <p><input type="email" id="email" name="email" required placeholder="Your Email Address" class="input-field"></p>
           </div>
           <div class="form-group">
-            <label for="message" class="reveal">Message:</label>
-            <p><textarea id="message" name="message" rows="6" required class="reveal"></textarea></p>
+            <label for="message">Message:</label>
+            <p><textarea id="message" name="message" rows="6" required placeholder="Write your message here..." class="input-field"></textarea></p>
           </div>
-          <button type="submit" class="reveal">Send Message</button>
+          <button class=" thank-btn" type="submit">Send Message</button>
         </form>
       </div>
 
     </div>
   </div>
+
 </section>
 
+<section class="footer" id="footer">
+  <div class="container">
+    <div class="footer-content">
+      <p>&copy; <span id="year"></span> Diwakar Allu. All Rights Reserved.</p>
+      <p>Follow me on <a href="https://www.linkedin.com/in/diwakarallu3435" target="_blank">LinkedIn</a> | <a href="https://github.com/diwakarallu" target="_blank">GitHub</a></p>
+    </div>
+  </div>
+</section>
+
+ 
 </main>
 <script src="script.js"></script>
+<script>
+  
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-    
+  
+  document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault(); 
+
+    const formData = new FormData(this);
+
+    fetch('https://formsubmit.co/75ab42d2f83b35de4da2415509950ba8', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => {
+      if (response.ok) {
+        Swal.fire({
+          icon: 'success',
+          title: 'Message Sent!',
+          text: "Your message has been sent successfully. I'll get back to you as soon as possible.Thanks for reaching out 😊.",
+          confirmButtonColor: '#f48fb1'
+        });
+        this.reset(); 
+      } else {
+        throw new Error('Something went wrong');
+      }
+    })
+    .catch(error => {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Failed to send message. Please try again.',
+        confirmButtonColor: '#f44336'
+      });
+    });
+  });
+
+
+</script>
+
+   
 </body>
 
 </html>
